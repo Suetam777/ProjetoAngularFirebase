@@ -10,15 +10,44 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  
   recado = {
-    assunto : null,
-    mensagem : null
-  }
-  constructor (
-    private crudservice: CrudService
-  ){ }
-  enviar(){
-    this.crudservice.insert(this.recado, 'recados');
+    assunto: null,
+    mensagem: null
   }
 
+  recados: any = [];
+
+  constructor(
+    public crudService: CrudService
+  ){}
+
+  enviar(){
+    this.crudService.insert(this.recado, 'recados');
+  }
+
+  carregar(){
+    this.recados = [];
+    this.crudService.fetchAll('recados')
+    .then((response) => {
+      console.log(response);
+      this.recados = response;
+    })
+
+    this.crudService.fetchAll('recados')
+    .catch((erro) => {
+      console.log(erro);
+    })
+
+    this.crudService.fetchAll('recados')
+    .finally(() => {
+      console.log('processo finalizado!');
+    })
+  }
+
+  remover(id: string){
+    this.crudService.remove(id, 'recados');
+    this.carregar();
+  }
+  
 }
