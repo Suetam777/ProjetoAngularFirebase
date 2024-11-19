@@ -17,4 +17,4 @@ import { IonicModule } from '@ionic/angular';
     CabecalhoComponent
   ]
 })
-export class ModuleModule { }
+export class CabecalhoModule { }

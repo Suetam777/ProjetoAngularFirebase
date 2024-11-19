@@ -1,0 +1,19 @@
+.cabecalho {
+    height: 250px;
+    background-image: url('https://img.freepik.com/fotos-gratis/ilustracao-de-tempestade-em-estilo-de-arte-digital_23-2151812782.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+        font-size: 64px;
+        color: white;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 5px black;
+    }
+}
